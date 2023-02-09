@@ -1,0 +1,67 @@
+@use 'variaveis';
+
+.dispositivos{
+    background-color: variaveis.$corSecundariaDeFundo;
+    text-align: center;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    img{
+        max-width: 480px;
+        width: 100%;
+        margin: 0 auto;
+        padding-top: 40px;
+        padding-bottom: 20px;
+    }
+
+    p{
+        color: variaveis.$corHeaderPrincipal;
+        font-weight: bold;
+        font-size: 32px;
+        padding-bottom: 24px;
+    }
+
+    ul{
+        display: flex;
+        justify-content: space-between;
+        li{
+            color: variaveis.$corHeaderPrincipal;
+            font-size: 16px;
+        }
+    }
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+
+    .dispositivos{
+        
+        p{
+            font-size: 28px;
+        }
+
+        ul{
+            display: inline;
+            li{
+                padding-top: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: variaveis.$tablet){
+
+    .dispositivos{
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+            grid: 10px;
+
+
+            li{
+                padding-bottom: 30px;
+                font-size: 14px;
+                list-style: none;
+                
+            }
+        }
+    }
+}    

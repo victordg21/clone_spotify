@@ -1,0 +1,147 @@
+@use 'variaveis';
+
+footer{
+    background-color: variaveis.$corDeFundo;
+    color: variaveis.$corHeaderPrincipal;
+    .informations{
+        display: flex;
+        list-style: none;
+        padding-bottom: 80px;
+        
+        .image{
+            padding-top: 50px;
+        }
+
+        .social-links{
+            display: flex;
+            right: 0;
+            padding: 80px 0px 10px 350px;
+            
+            a{
+                padding: 0px 16px 0px;
+                border: 1px solid variaveis.$corSecundariaDeFundo;
+                height: 57.6px;
+                border-radius: 57.6px;
+                margin-right: 16px;
+
+                svg{
+                    margin-top: 16.8px;
+                    width: 24px;
+                    height: 24px;
+                    
+                }
+                
+            }
+        }
+
+        li{
+            padding-top: 80px;
+            padding-right: 35px;
+            img{
+                width: 132px
+            }
+
+            h4{
+                color: variaveis.$corFooter;
+                font-size: 12px;
+                margin-bottom: 20px;
+            }
+
+            a{
+                color: variaveis.$corHeaderPrincipal;
+                text-decoration: none;
+                display: flex;
+                padding: 3px 0px 15px;
+                font-size: 14px;
+                font-weight: bold;
+            }
+
+            a:hover{
+                color: variaveis.$corBotaoHover;
+            }
+        }
+
+        image{
+            padding-top: 40px;
+        }
+
+    }
+    
+    .details{
+        display: flex;
+        padding-bottom: 40px;
+
+        .spotify{
+            padding-left: 450px;
+        }
+        
+        li{
+            list-style: none;
+            padding-right: 10px;
+            font-size: 12px;
+            a{
+                text-decoration: none;
+                color: variaveis.$corFooter;
+                
+            }
+
+            a:hover{
+                color: variaveis.$corBotaoHover;
+            }
+        }
+    }
+    
+
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+
+    footer{
+        .informations{
+            display: inline;
+            li{
+                padding-top: 40px;
+            }
+
+            .social-links{
+                padding: 40px 0px 20px;
+            }
+        }
+
+        .details{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+
+            .spotify{
+                padding-left: 10px;
+            }
+
+            li{
+                font-size: 10px;
+                padding: 20px 0px;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: variaveis.$tablet){
+
+    footer{
+        .informations{
+
+            .links{
+                padding-right: 10px;
+            }
+
+            .social-links{
+                padding-left: 0px;
+            }
+        }
+
+        .details{
+            .spotify{
+                padding-left: 150px;
+            }
+        }
+    }
+}

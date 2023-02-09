@@ -1,0 +1,68 @@
+@use 'variaveis';
+
+.apps{
+    background-color: variaveis.$corHeaderPrincipal;
+    padding-top: 70px;
+    padding-bottom: 70px;
+    .text-up{
+        text-align: center;
+        font-size: 32px;
+        font-weight: bold;
+        padding-bottom: 24px;
+    }
+
+    .text-down{
+        text-align: center;
+        padding-bottom: 16px;
+        font-weight: bold;
+    }
+
+    ul{
+        display: flex;
+        list-style: none;
+        width: 390px;
+        justify-content: space-between;
+        margin: 0 auto;
+
+        .itens{
+            a{
+                img{
+                    width: 120px;
+                }
+            }
+        }
+    }
+    
+}
+
+@media screen and (max-width: variaveis.$mobile) {
+
+    .apps{
+
+        .text-up{
+            font-size: 28px;
+        }
+
+        .text-down{
+            font-weight: normal;
+        }
+
+        ul{
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            width: 250px;
+
+            li{
+                .google-play{
+                    width: 125px;
+                }
+
+                .apple-store{
+                    height: 35px;
+                    margin-top: 5px;
+                }
+            }
+        }
+    }
+}
+

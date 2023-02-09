@@ -1,0 +1,155 @@
+@use 'variaveis';
+
+header{
+
+    background-color: variaveis.$corDeFundo;
+
+    nav{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        height: 8vh;
+        
+        img{
+            width: 132px;
+        }
+
+        .mobile-menu div{
+            width: 32px;
+            height: 2px;
+            background-color: variaveis.$corHeaderPrincipal;
+            margin: 8px;
+            transition: 0.3s;
+        }
+
+        .mobile-menu{
+            cursor: pointer;
+            display: none;
+        }
+
+        .nav-list{
+            list-style: none;
+            display: flex;
+
+            .another-line{
+                display: none;
+            }
+
+            li{
+                color: variaveis.$corHeaderPrincipal;
+                letter-spacing: 3px;
+                margin-left: 32px;
+
+                a{
+                    color: variaveis.$corHeaderPrincipal;
+                    text-decoration: none;
+                    font-weight: bold;
+                }
+                .nav-different-color{
+                    color: variaveis.$corHeaderSecundaria;
+                }
+
+                a:hover{
+                    color: variaveis.$corBotaoHover;
+                }
+
+                .logo-spotify{
+                    display: none;
+                }
+
+            
+
+            }
+        }
+
+
+    }    
+
+}
+
+@media (max-width: variaveis.$tablet){
+
+
+    body{
+        overflow-x: hidden;
+        header{
+            
+            nav{
+                
+                .mobile-menu{
+                    display: block;
+                }
+
+                .mobile-menu.active .line1{
+                    transform: rotate(-45deg) translate(-8px, 8px);
+                }
+
+                .mobile-menu.active .line2{
+                    opacity: 0;
+                }
+
+                .mobile-menu.active .line3{
+                    transform: rotate(45deg) translate(-5px, -7px);
+                }
+        
+                .nav-list{
+                    position: absolute;
+                    top: 8vh;
+                    right: 0;
+                    width: 100vw;
+                    height: 92vh;
+                    background: variaveis.$corDeFundo;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: space-around;
+                    transform: translateX(100%);
+                    transition: transform 0.3s ease-in;
+                    display: none;
+            
+                    li{
+                        margin-left: 0;
+                        opacity: 0;
+                    }
+                }
+
+                .nav-list.active{
+                    transform: translateX(0);
+                    display:block;
+                    li{
+                        text-align: center;
+                        padding: 20px 0px;
+                    }
+                    .logo-spotify{
+                        padding-top: 100px;
+                        display: block;
+                        margin: 0 auto;
+                    }
+                    .another-line{
+                        display: block;
+                        font-weight: bold;
+                        font-size: 40px;
+                        padding-bottom: 60px;
+                    }
+                    .first-line{
+                        display: none;
+                    }
+
+                }
+
+
+            }
+        }
+
+        @keyframes navLinkFade{
+            from{
+                opacity: 0;
+                transform: translateX(50px);
+            }
+            to{
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+    }
+}
+
